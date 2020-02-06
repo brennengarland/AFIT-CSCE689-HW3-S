@@ -31,7 +31,7 @@ void PCalc_T::markNonPrimes()  {
                     this->curr_thds.at(id) = this->array_size();
             } else
             {
-                usleep(1);
+                usleep(0.001);
             }
             
         }
@@ -49,14 +49,14 @@ void PCalc_T::markNonPrimes()  {
                 for(auto min_thd: this->curr_thds) {
                     if(min_thd <= i) {
                         min = false;
-                        usleep(0.01);
+                        usleep(0.0001);
                     }
                 }
             } while(min);
 
             // If a thread has not taken the old prime, wait
             while(this->current_prime != 1)
-                usleep(0.01);
+                usleep(0.00001);
 
             // Set the new prime for threads to work on
             this->current_prime = i;
