@@ -20,16 +20,13 @@ class PCalc_T : public PCalc
     public:
     void markNonPrimes() override;
     PCalc_T(unsigned int array_size, unsigned int num_threads);
-    void threadNonPrimes(int id);
 
     private:
-    bool checkThread(unsigned int index);
-
     std::vector<std::thread> thread_pool;
     unsigned int num_threads = 0;
     std::mutex thd_lock;
-    std::vector<int> curr_thds;
-    int current_prime = 1;
+    std::vector<unsigned int> curr_thds;
+    unsigned int current_prime = 1;
     bool marking = true;
 };
 
