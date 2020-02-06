@@ -3,6 +3,7 @@
 
 #include "PCalc.h"
 #include <vector>
+#include <list>
 #include <thread>
 #include <mutex>
 
@@ -29,7 +30,7 @@ class PCalc_T : public PCalc
     std::mutex thd_lock;
     std::vector<int> curr_thds;
     int current_prime = 1;
-
+    bool marking = true;
 };
 
 
