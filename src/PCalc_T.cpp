@@ -23,12 +23,14 @@ void PCalc_T::markNonPrimes()  {
                     i = this->current_prime;
                     this->current_prime = 1;
                 }
+                if(i != 1) {
                     // std::cout << "\nCalculating " << i << "\n";
                     for(unsigned int j = pow(i,2); j < this->array_size(); j += i) {
                         this->at(j) = false; 
                         this->curr_thds.at(id) = j;
                     }
                     this->curr_thds.at(id) = this->array_size();
+                }
             } else
             {
                 usleep(0.001);

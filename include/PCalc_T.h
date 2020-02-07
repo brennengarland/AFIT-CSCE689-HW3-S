@@ -26,6 +26,7 @@ class PCalc_T : public PCalc
     unsigned int num_threads = 0;
     std::mutex thd_lock;
     std::vector<unsigned int> curr_thds;
+    std::vector<unsigned int> wrk_thds;
     unsigned int current_prime = 1;
     bool marking = true;
 };
